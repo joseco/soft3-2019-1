@@ -1,1 +1,1 @@
-Proyecto de GIT para Ingeniería de Software 3
+Proyecto de GIT para Ingeniería de Software 3 para la Universidad NUR
