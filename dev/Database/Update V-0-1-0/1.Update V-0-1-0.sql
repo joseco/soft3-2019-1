@@ -63,8 +63,8 @@ INSERT INTO [PuntoVentaDB].[dbo].[tbl_Version]
            ,[versionMenor]
            ,[patch])
      VALUES
-           (0
-           ,1
+           (1
+           ,0
            ,0)
 GO
 
