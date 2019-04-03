@@ -1,21 +1,54 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPages_MasterPage" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <asp:Literal ID="ScriptsLiteral" runat="server"></asp:Literal>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        
-        <div>
-            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <asp:HyperLink runat="server" CssClass="navbar-brand" NavigateUrl="~/Index.aspx">Sistema</asp:HyperLink>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <asp:HyperLink runat="server" NavigateUrl="~/Index.aspx" CssClass="nav-link" href="#">Inicio</asp:HyperLink>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdown01"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <asp:HyperLink runat="server" NavigateUrl="~/Producto/ListProductos.aspx" CssClass="dropdown-item">Lista de Productos</asp:HyperLink>
+                            <asp:HyperLink runat="server" NavigateUrl="~/Producto/DetalleProducto.aspx" CssClass="dropdown-item">Nuevo Producto</asp:HyperLink>
+                        </div>
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <asp:LinkButton ID="Logout" runat="server"
+                        OnClick="Logout_Click"
+                        CssClass="btn btn-outline-success my-2 my-sm-0">Salir</asp:LinkButton>
+                </div>
+            </div>
+        </nav>
+
+        <main role="main" class="container" id="main">
+
+            <asp:ContentPlaceHolder ID="content" runat="server">
+
             </asp:ContentPlaceHolder>
-        </div>
+
+        </main>
     </form>
 </body>
 </html>
